@@ -32,7 +32,7 @@ You may have to adjust the GRASS path (initGRASS) in the file tranexSource_R (us
 
 SETUP R
 Use R version >= 3.0.0 from, http://cran.r-project.org/
-Install packages: RPostgreSQL, sp, rgdal, spgrass6, maptools
+Install packages: RPostgreSQL, sp, rgdal, spgrass, maptools
 You may have to set the "R_LIBS" environmental variable to match '.libPaths()' for PostGIS to work
 It is recommended to run tranex in R via RStudio, http://www.rstudio.com/
 
