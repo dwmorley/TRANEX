@@ -1,5 +1,5 @@
 ## SEE THE README
-## This file called as Source  from tranex_R.R
+## This file called as Source from tranex_R.R
 
 ## Create noise model function
 run_crtn <- function(conn_st, rec, rec_id, rds, lndc, flw, ref, hgt, nds) {
@@ -32,7 +32,6 @@ run_crtn <- function(conn_st, rec, rec_id, rds, lndc, flw, ref, hgt, nds) {
   ##make output tables
   rs <- dbSendQuery(con, "select make_tables()")
   dbClearResult(dbListResults(con)[[1]]) 
-    
 
   for (i in 1:n) {
     ##timer
