@@ -64,6 +64,15 @@ Output saved to CRTN postgres database in table 'output' and in R tempdir() as '
 File permissions may mean csv cannot be saved. To output export directly from Postgres, use:
 copy output to 'C:/Program Files/PostgreSQL/9.4/data/TRANEX_out.csv' delimiter ',' csv header;
 
+This version uses a correction for minor roads based on an idealised and assumed 600 vehicles a
+day on a road near to the receptor point (this handles the possibibility of zero db noise estimates), 
+which is an issue of a roads layer contains mostly just main roads. However, if your road data set 
+is of suitable quality, set at line 575 in the SQL script:
+
+minor := minor / 2; --divide 1200 by 2 to get 600 cars a day
+to
+minor := 0;
+
 
 ### FILE FORMATS ###
 
