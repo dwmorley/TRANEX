@@ -48,7 +48,10 @@ Ensure all input files are correctly imported/named into created database using 
 Ensure all files have the correct SRID, eg: 27700 for the UK OS National Grid
 Ensure all functions have been created by running tranex_postgres.sql in the created database
 
-To import raster (Use tif format, not ArcGrid), use raster2pgsql.exe from command line, for example:
+To import raster (Use tif format, not ArcGrid), use raster2pgsql.exe from command line:
+In a command prompt, navigate to your postgres bin directory
+> cd Program Files\PostgreSQL\9.4\bin (this directory should contain raster2pgsql.exe)
+Then run the command:
 > raster2pgsql -s 27700 -I C:\myraster.tif -t 50x50 public.myraster > C:\temp\myraster.sql
 > psql -U postgres -d CRTN -f C:\temp\myraster.sql
 When imported: in pgAdminIII, right-click myraster > maintainence > Vacuum Analyze
