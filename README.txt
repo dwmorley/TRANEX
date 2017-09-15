@@ -80,7 +80,8 @@ minor := 0;
 
 The Facades SQL script contains a method to generate receptor points (defined as 1m from the assumed front facade of a building). 
 This script requires a layer of building polygons and a line road network with some indication of road type/importance
-(here we use OS ITN). The section at the bottom of the script creates the road_lut - this will have to be alter if a different road layer is used. The assumption is that a house will not have a front facing facade on a motorway (hence rated 10),
+(here we use OS ITN). The section at the bottom of the script creates the road_lut - this will have to be altered
+if a different road layer is used. The assumption is that a house will not have a front facing facade on a motorway (hence rated 10),
 more likely would be a 'local street' (hence rated 6). See Gulliver et al. 2015 (citation above) for more info. 
 
 
