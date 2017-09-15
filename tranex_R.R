@@ -55,7 +55,7 @@ conn <- c('localhost', '5432', 'tranextest', 'postgres', '******')
 
 ##Input data (names are postgres tables, no extensions or paths)
 receptors <- "receptors"    	      #[Receptors]
-rec_id <- "id"			        #[Receptor id field]
+rec_id <- "gid"			        #[Receptor id field]
 roads <- "ne_10m_points_clip"		            #[10m road segment points [rd_node_id]]
 land <- "mm_bh_ne_clip"				        #[Landcover polygons]
 flow <- "traffic08_ne_clip" 	              #[Traffic dbf: v, q, p [rd_node_id]]
