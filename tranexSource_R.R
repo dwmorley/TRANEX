@@ -22,6 +22,7 @@ run_crtn <- function(conn_st, rec, rec_id, rds, lndc, flw, ref, hgt, nds) {
   ##Connect to Postgresql
   drv <- dbDriver("PostgreSQL")
   con <- dbConnect(drv, host=conn_st[1], port=conn_st[2], dbname=conn_st[3], user=conn_st[4], password=conn_st[5])
+  on.exit(dbDisconnect(con))
   dsn_st <- paste("PG:host=", conn_st[1], "dbname=", conn_st[3], "user=", conn_st[4], "password=" ,conn_st[5], sep=" ")
   
   ##Get number of points to process
