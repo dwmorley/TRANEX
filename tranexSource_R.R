@@ -44,9 +44,7 @@ run_crtn <- function(conn_st, rec, rec_id, rds, lndc, flw, ref, hgt, nds) {
     
     ##Calculate reflections
     if (reflect) {
-      ##get viewpoint
-      file.remove(dir(d, full.names = TRUE))
-      
+      ##get viewpoint      
       x <- fetch(dbSendQuery(con, "select st_x(p.geom) from this_point as p"), n = -1)
       y <- fetch(dbSendQuery(con, "select st_y(p.geom) from this_point as p"), n = -1)
       
@@ -143,6 +141,9 @@ run_crtn <- function(conn_st, rec, rec_id, rds, lndc, flw, ref, hgt, nds) {
   rs <- dbSendQuery(con, q)
   
   dbDisconnect(con)
+  
+  file.remove(dir(d, full.names = TRUE))
+  
   print(paste("OUTPUT IN: ", pth, sep =""))
   print(paste("TIME ELAPSED: ", Sys.time() - stt, sep=""))
   print("##### FINISHED #####")
