@@ -13,6 +13,14 @@ run_crtn <- function(conn_st, rec, rec_id, rds, lndc, flw, ref, hgt, nds) {
   if (reflect) { 
     WPATH <- Sys.getenv("PATH") 
     WPATH1 <- paste("C:\\OSGeo4W\\bin", WPATH, sep=";") 
+    
+    ## Some installs of GRASS may need a bit more (in the case of missing .dll errors)
+    ## Find the missing .dlls in the GRASS directory and add location(s) to the PATH
+    
+    #WPATH1 <- paste("C:\\OSGeo4W\\bin", 
+    #                "C:\\OSGeo4W\\apps\\grass\\grass-7.2.2\\bin", 
+    #                "C:\\OSGeo4W\\apps\\grass\\grass-7.2.2\\lib", WPATH, sep=";") 
+        
     Sys.setenv(PATH=WPATH1)
     
     ## Ensure this is the correct path for your system, especially GRASS version may be different
